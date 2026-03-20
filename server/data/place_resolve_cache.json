@@ -1,0 +1,266 @@
+[
+  {
+    "key": "hoogeveluwe__nederland__",
+    "raw_name": "Hooge veluwe",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Veluwe",
+      "lat": 52.2,
+      "lng": 5.85,
+      "kind": "regio",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:22.290Z"
+  },
+  {
+    "key": "noordoostpolder__nederland__",
+    "raw_name": "Noordoostpolder",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Noordoostpolder",
+      "lat": 52.695,
+      "lng": 5.96,
+      "kind": "regio",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:22.293Z"
+  },
+  {
+    "key": "twente__nederland__",
+    "raw_name": "Twente",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Twente",
+      "lat": 52.26,
+      "lng": 6.75,
+      "kind": "regio",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:22.834Z"
+  },
+  {
+    "key": "achterhoek__nederland__",
+    "raw_name": "Achterhoek",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Achterhoek",
+      "lat": 51.98,
+      "lng": 6.295,
+      "kind": "regio",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:22.837Z"
+  },
+  {
+    "key": "walcheren__nederland__",
+    "raw_name": "Walcheren",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Walcheren",
+      "lat": 51.5,
+      "lng": 3.55,
+      "kind": "regio",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:23.001Z"
+  },
+  {
+    "key": "goereeoverflakkee__nederland__",
+    "raw_name": "Goeree-Overflakkee",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Goeree-Overflakkee",
+      "lat": 51.76,
+      "lng": 4.1,
+      "kind": "regio",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:23.003Z"
+  },
+  {
+    "key": "texel__nederland__",
+    "raw_name": "Texel",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Texel",
+      "lat": 53.0541,
+      "lng": 4.797,
+      "kind": "regio",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:23.006Z"
+  },
+  {
+    "key": "schiermonnikoog__nederland__",
+    "raw_name": "Schiermonnikoog",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Schiermonnikoog",
+      "lat": 53.4872,
+      "lng": 6.162,
+      "kind": "regio",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:23.009Z"
+  },
+  {
+    "key": "biebosch__nederland__",
+    "raw_name": "Biebosch",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Biebosch",
+      "lat": 50.8509837,
+      "lng": 5.8376596,
+      "kind": "regio",
+      "region": "Nederland",
+      "bbox": [
+        50.8421944,
+        5.8280476,
+        50.8598034,
+        5.850815
+      ],
+      "aliases": [
+        "Biebosch, IJzeren, Sibbe, Valkenburg, Valkenburg aan de Geul, Limburg, Nederland"
+      ]
+    },
+    "updated_at": "2026-03-20T19:49:23.794Z"
+  },
+  {
+    "key": "amsterdamrijnkanaal__nederland__",
+    "raw_name": "Amsterdam-Rijnkanaal",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Amsterdam-Rijnkanaal",
+      "lat": 52.2,
+      "lng": 4.99,
+      "kind": "water",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:23.797Z"
+  },
+  {
+    "key": "loosdrechtsplassen__nederland__",
+    "raw_name": "Loosdrechts plassen",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Assen",
+      "lat": 52.9928,
+      "lng": 6.5642,
+      "kind": "city",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:23.807Z"
+  },
+  {
+    "key": "reewijkseplassen__nederland__",
+    "raw_name": "Reewijkse plassen",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Assen",
+      "lat": 52.9928,
+      "lng": 6.5642,
+      "kind": "city",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:23.816Z"
+  },
+  {
+    "key": "veluwemeer__nederland__",
+    "raw_name": "Veluwemeer",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Veluwemeer",
+      "lat": 52.38,
+      "lng": 5.72,
+      "kind": "water",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:23.819Z"
+  },
+  {
+    "key": "ijssel__nederland__",
+    "raw_name": "IJssel",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "IJssel",
+      "lat": 52.35,
+      "lng": 6.08,
+      "kind": "water",
+      "region": "Nederland",
+      "bbox": null
+    },
+    "updated_at": "2026-03-20T19:49:23.821Z"
+  },
+  {
+    "key": "markerwaard__nederland__",
+    "raw_name": "Markerwaard",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Markerwaardlaan",
+      "lat": 51.4783445,
+      "lng": 5.4630914,
+      "kind": "city",
+      "region": "Nederland",
+      "bbox": [
+        51.4782486,
+        5.4626306,
+        51.4783627,
+        5.4635629
+      ],
+      "aliases": [
+        "Markerwaardlaan, Woenselse Heide, Woensel-Noord, Eindhoven, Noord-Brabant, Nederland, 5628 KZ, Nederland"
+      ]
+    },
+    "updated_at": "2026-03-20T19:49:24.821Z"
+  },
+  {
+    "key": "pampus__nederland__",
+    "raw_name": "Pampus",
+    "region": "Nederland",
+    "preferred_kind": null,
+    "result": {
+      "name": "Pampus",
+      "lat": 52.364697,
+      "lng": 5.0689875,
+      "kind": "city",
+      "region": "Nederland",
+      "bbox": [
+        52.3637437,
+        5.0675401,
+        52.3655665,
+        5.0704069
+      ],
+      "aliases": [
+        "Pampus, Muiden, Gooise Meren, Noord-Holland, Nederland, 1398 PX, Nederland"
+      ]
+    },
+    "updated_at": "2026-03-20T19:49:25.126Z"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password_hash": "$2a$12$RE/9.i5ZJ0X6wWJ7pDyyneGsva9SooO1ss89Nyvaqf1C5yyRvV7vy",
+    "role": "admin",
+    "created_at": "2026-03-16T20:31:06.692Z"
+  },
+  {
+    "id": 2,
+    "username": "teacher",
+    "password_hash": "$2a$12$L73WPw8iWAGtmwKOCv.1reX4btG6gfX81QK1bsP6InVEMJyY6ht.a",
+    "role": "teacher",
+    "created_at": "2026-03-16T20:31:07.274Z"
+  }
+]

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TopoVlucht</title>
+  <meta name="theme-color" content="#98d5fb" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="heroBlock heroHeader"><img class="titleHeli" src="/heli.gif" alt="Helikopter" /><div><div class="heroEyebrow">Topo • vlieg • vind</div><h1 class="heroTitle">TopoVlucht <span>Deluxe</span></h1></div></div>
+      <div class="actions">
+        <button id="soundHeliBtn" class="soft" type="button">🔊 Heli</button>
+        <button id="soundFxBtn" class="soft" type="button">🔔 Effecten</button>
+        <button id="fullscreenBtn" class="soft">⛶ Fullscreen</button>
+        <button id="teacherLoginOpenBtn" class="soft">Docent login</button>
+        <button id="teacherLogoutBtn" class="soft hidden">Uitloggen</button>
+      </div>
+    </header>
+
+    <main id="menuScreen" class="layout">
+      <section class="card maincard">
+        <div class="startHero">
+          <div>
+            <h2>Kies een opdracht en stijg meteen op</h2>
+          </div>
+        </div>
+        <div class="field">
+          <label for="playerNameInput">Naam leerling</label>
+          <input id="playerNameInput" placeholder="Voornaam" />
+        </div>
+
+        <div class="field">
+          <label>Spelvorm</label>
+          <div class="row controlsRow">
+            <div class="row controlsLeft">
+              <button id="modeHeliBtn" class="toggle active" type="button">TopoHeli</button>
+              <button id="modeNamingBtn" class="toggle" type="button">Namen noemen</button>
+              <button id="practiceBtn" class="soft" type="button">Oefenmodus</button>
+            </div>
+            <button id="startInlineBtn" class="startInlineBtn" type="button">▶ Start</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Opdracht</label>
+          <div id="assignmentList" class="assignmentList assignmentAccordion"></div>
+        </div>
+
+      </section>
+
+      <aside class="card sidebar">
+        <h2>Highscores</h2>
+        <div id="selectedGameLabel" class="muted">Kies een opdracht.</div>
+        <div class="row">
+          <button id="periodAllBtn" class="toggle active" type="button">All time</button>
+          <button id="periodWeekBtn" class="toggle" type="button">Deze week</button>
+          <button id="periodDayBtn" class="toggle" type="button">Vandaag</button>
+        </div>
+        <ul id="highscoreList" class="scoreList"></ul>
+
+        <h2>Spelregels</h2>
+        <div class="rules">
+          <div class="rule"><span>Tijd</span><strong id="rulesTime">60</strong></div>
+          <div class="rule"><span>Bonus</span><strong>+5s</strong></div>
+        </div>
+      </aside>
+    <div class='turboHint'>Turbo: spatiebalk</div>
+</main>
+
+    <section id="gameScreen" class="hidden">
+      <div class="gameTop">
+        <div class="card missionCard">
+          <div class="missionLabel">OPDRACHT</div>
+          <div id="missionText" class="missionText">...</div>
+        </div>
+        <div class="hud">
+          <div class="pill">⏱ <span id="timeStat">60</span></div>
+          <div class="pill">⭐ <span id="scoreStat">0</span></div>
+          <div class="pill">✅ <span id="streakStat">0</span></div>
+        </div>
+      </div>
+
+      <div id="namingPanel" class="card namingPanel hidden">
+        <div class="row namingOptions">
+          <button id="spellStrictBtn" class="toggle" type="button">Foutloos geschreven</button>
+          <button id="spellLenientBtn" class="toggle active" type="button">Kleine schrijffout mag</button>
+        </div>
+        <div class="row namingAnswerRow">
+          <input id="answerInput" placeholder="Typ hier de naam van de plek" />
+          <button id="answerBtn">Controleer</button>
+        </div>
+        <div id="answerFeedback" class="muted"></div>
+      </div>
+
+      <div class="mapWrap">
+        <div id="map"></div>
+        <img id="heli" class="heli" src="/heli.gif" alt="Helikopter" />
+        
+        <div class="mapButtons">
+          <button id="nextMissionBtn" class="soft hidden">Volgende opdracht</button>
+          <button id="gameFullscreenBtn" class="soft">⛶ Fullscreen</button>
+          <button id="menuBtn" class="soft">Terug</button>
+        </div>
+        <div id="debugIndicator" class="debugIndicator hidden" aria-live="polite"></div>
+      </div>
+    </section>
+
+
+
+    <section id="summaryScreen" class="card summaryScreen hidden">
+      <h2>Samenvatting</h2>
+      <div id="summaryStats" class="summaryStats"></div>
+      <div id="summaryHighscore" class="summaryHighscore muted"></div>
+      <div id="summaryNameWrap" class="field hidden">
+        <label for="summaryNameInput">Naam voor highscore</label>
+        <input id="summaryNameInput" placeholder="Vul je naam in" maxlength="40" />
+      </div>
+      <div class="actions">
+        <button id="summarySaveBtn" class="hidden">Highscore opslaan</button>
+        <button id="summaryReplayBtn">Zelfde spel opnieuw</button>
+        <button id="summaryMenuBtn" class="soft">Terug naar menu</button>
+      </div>
+    </section>
+
+    <section id="teacherPanel" class="card hidden teacherPanel">
+      <h2>Docentbibliotheek</h2>
+      <div class="twoCol">
+        <div>
+          <div class="field">
+            <label for="assignmentNameInput">Naam opdracht</label>
+            <input id="assignmentNameInput" placeholder="Bijv. Rivieren van Europa" />
+          </div>
+          <div class="field">
+            <label for="assignmentRegionInput">Topografisch onderdeel</label>
+            <div class="row teacherRegionRow">
+              <select id="assignmentRegionInput"></select>
+              <input id="assignmentRegionCustomInput" class="hidden" placeholder="Nieuwe regio" />
+            </div>
+            <div class="muted">Beheerders kunnen extra regio's toevoegen. Kies hier een onderdeel voor de opdracht.</div>
+          </div>
+          <div class="field">
+            <label for="assignmentDifficultyInput">Niveau</label>
+            <input id="assignmentDifficultyInput" placeholder="normaal" />
+          </div>
+          <div class="field">
+            <label for="assignmentPayloadInput">Plekken (één naam per regel)</label>
+            <textarea id="assignmentPayloadInput" rows="12" placeholder="Amsterdam&#10;Rotterdam&#10;Utrecht"></textarea>
+            <div class="muted">Plak gewoon een lijst met namen. Bij opslaan wordt meteen gecontroleerd of alle plekken gevonden zijn. Kies ook eerst het topografisch onderdeel.</div>
+          </div>
+          <div class="actions">
+            <button id="createAssignmentBtn">Nieuwe opdracht opslaan</button>
+            <button id="cancelEditAssignmentBtn" class="soft hidden" type="button">Bewerken annuleren</button>
+          </div>
+          <div id="lookupStatus" class="lookupStatus" aria-live="polite"></div>
+          <div id="lookupSummary" class="muted lookupSummary"></div>
+          <div id="lookupIssues" class="lookupIssues"></div>
+          <div class="actions">
+            <button id="lookupConfirmBtn" class="hidden">Geselecteerde suggesties toevoegen</button>
+            <button id="lookupCancelBtn" class="soft hidden" type="button">Annuleren</button>
+          </div>
+        </div>
+        <div>
+          <h3>Bestaande opdrachten</h3>
+          <ul id="teacherAssignmentList" class="scoreList"></ul>
+
+          <h3>Highscores per kaart</h3>
+          <div id="teacherHighscoreList" class="teacherStats"></div>
+
+          <h3>Meest gemiste plekken per kaart</h3>
+          <div id="teacherMissList" class="teacherStats"></div>
+
+          <section id="adminPanel" class="adminPanel hidden">
+            <h3>Extra regio toevoegen</h3>
+            <div class="field">
+              <label for="adminRegionNameInput">Nieuwe regio</label>
+              <input id="adminRegionNameInput" placeholder="Bijv. Midden-Oosten" />
+            </div>
+            <div class="actions">
+              <button id="adminCreateRegionBtn">Regio toevoegen</button>
+            </div>
+            <ul id="adminRegionList" class="scoreList"></ul>
+
+            <h3>Helikoptersnelheid per regio</h3>
+            <div class="muted">Vul per regio een snelheidsfactor in. 1,00 = standaard, lager = langzamer, hoger = sneller.</div>
+            <div id="adminSpeedSettings" class="adminSpeedSettings"></div>
+            <div class="actions">
+              <button id="adminSaveSpeedBtn" type="button">Snelheden opslaan</button>
+            </div>
+            <div id="adminSpeedStatus" class="muted"></div>
+
+            <h3>Docenten beheren</h3>
+            <div class="field">
+              <label for="adminTeacherUsernameInput">Nieuwe docent</label>
+              <input id="adminTeacherUsernameInput" placeholder="gebruikersnaam" />
+            </div>
+            <div class="field">
+              <label for="adminTeacherPasswordInput">Wachtwoord</label>
+              <input id="adminTeacherPasswordInput" type="password" placeholder="wachtwoord" />
+            </div>
+            <div class="actions">
+              <button id="adminCreateTeacherBtn">Docent toevoegen</button>
+            </div>
+            <ul id="adminTeacherList" class="scoreList"></ul>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <dialog id="loginDialog">
+    <form method="dialog" class="dialogForm">
+      <h2>Docent / beheerder login</h2>
+      <label for="loginUsernameInput">Gebruikersnaam</label>
+      <input id="loginUsernameInput" autocomplete="username" />
+      <label for="loginPasswordInput">Wachtwoord</label>
+      <input id="loginPasswordInput" type="password" autocomplete="current-password" />
+      <p id="loginError" class="error"></p>
+      <div class="actions">
+        <button type="button" id="loginSubmitBtn">Inloggen</button>
+        <button type="button" id="loginCancelBtn" class="soft">Sluiten</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/app.js"></script>
+<div id="appVersionLabel" class="appVersion">v1.59</div>
+</body>
+</html>

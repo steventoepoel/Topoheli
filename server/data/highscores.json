@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "assignment_id": 1,
+    "player_name": "Test",
+    "score": 5,
+    "game_mode": "heli",
+    "created_at": "2026-03-19T14:21:47.894Z"
+  },
+  {
+    "id": 2,
+    "assignment_id": 9,
+    "player_name": "Steven",
+    "score": 13,
+    "game_mode": "heli",
+    "created_at": "2026-03-20T19:51:30.868Z"
+  }
+]
